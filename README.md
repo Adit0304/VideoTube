@@ -76,16 +76,3 @@ Welcome to **Videotube**! This is a YouTube-like platform where users can upload
 
 Contributions are welcome! Please fork the repository and create a pull request.
 
-## 🙏 Acknowledgements
-
-- Thanks to [OpenAI](https://openai.com) for ChatGPT
-- Thanks to [YouTube](https://youtube.com) for the inspiration
-
-## Contact
-
-For any questions or feedback, feel free to reach out:
-
-- Email: pritambose040@gnail.com
-- GitHub: [pritambose0](https://github.com/pritambose0)
-
----
