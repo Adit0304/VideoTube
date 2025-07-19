@@ -1,6 +1,7 @@
 // require("dotenv").config({ path: "./env" });
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import { fileURLToPath } from "url"; 
 import { app } from "./app.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
