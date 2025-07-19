@@ -2,7 +2,11 @@
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 import { app } from "./app.js";
-dotenv.config({ path: "./.env" });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// ✅ Load .env from parent folder (/server/.env)
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 connectDB()
   .then(() => {
