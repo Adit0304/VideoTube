@@ -64,7 +64,7 @@ const getAllVideos = asyncHandler(async (req, res) => {
     { $skip: skip },
   ]);
 
-  // console.log("VIDEOS: ", videos);
+  console.log("VIDEOS: ", videos);
   return res
     .status(200)
     .json(new ApiResponse(200, videos, "Videos fetched successfully"));

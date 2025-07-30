@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import VideoCardSkeleton from "../components/VideoCardSkeleton";
 
-function Home() {
+function  Home() {
   const {
     data: videos,
     isError,
@@ -18,6 +18,8 @@ function Home() {
     },
     staleTime: 1000 * 60,
   });
+
+  // console.log("data : ",data);
 
   return (
     <section className="w-full pb-[80px] sm:ml-[70px] sm:pb-0 lg:ml-0">

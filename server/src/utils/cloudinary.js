@@ -2,7 +2,7 @@ import { v2 as cloudinary } from "cloudinary";
 import fs from "fs";
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUDNAME,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
@@ -26,9 +26,16 @@ const uploadOnCloudinary = async (localFilePath) => {
     fs.unlinkSync(localFilePath); // Removing temporarily stored file from server
     return response;
   } catch (error) {
-    fs.unlinkSync(localFilePath);
-    //Removes the file which is temporarily stored in the server
+    console.error("CLOUDINARY UPLOAD ERROR:", error);  // ✅ log the actual problem
+    try {
+      fs.unlinkSync(localFilePath);  // ✅ safely cleanup if file exists
+    } catch (fsErr) {
+      console.error("Failed to delete temp file:", fsErr); // optional safety
+    }
     return null;
+    // fs.unlinkSync(localFilePath);
+    // //Removes the file which is temporarily stored in the server
+    // return null;
   }
 };
 

@@ -26,6 +26,7 @@ function Navbar() {
       toast.success("Logged out successfully");
     },
     onError: (error) => {
+      // console.log(error.message);
       toast.error(error?.response?.data?.message || "Error while logging out");
     },
   });

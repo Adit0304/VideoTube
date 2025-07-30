@@ -2,7 +2,7 @@ import axios from "axios";
 import config from "../config/config";
 
 const axiosInstance = axios.create({
-  baseURL: config.baseUrl,
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true, // Include cookies in requests
 });
 
